@@ -86,7 +86,7 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-
+let btn ;
 function eventHandler(e) {
    
      if(counter <25){
@@ -100,12 +100,17 @@ function eventHandler(e) {
         }
         render();
         counter++;
-    }else if(counter === 25){
-        imgSection.removeEventListener('click',eventHandler);
+    
         
+    }else{
+         btn = document.getElementById('btn');
+        btn.addEventListener('click', result);
+        
+
     }
     
 }
+
 render();
 
 imgSection.addEventListener('click', eventHandler);
@@ -124,10 +129,10 @@ function result(){
         }
     }
 
-    
+    btn.removeEventListener('click',result);
 
 }
-
+result();
 
 
 
